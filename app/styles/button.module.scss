@@ -6,7 +6,7 @@
   transition: background-color 0.3s ease;
 
   &--primary {
-    background-color: #4caf50; /* Verde para adicionar */
+    background-color: #4caf50;
     color: white;
 
     &:hover {
@@ -15,7 +15,7 @@
   }
 
   &--danger {
-    background-color: #f44336; /* Vermelho para deletar */
+    background-color: #f44336;
     color: white;
 
     &:hover {
@@ -24,7 +24,7 @@
   }
 
   &--secondary {
-    background-color: #e7e7e7; /* Cinza para cancelar */
+    background-color: #e7e7e7;
     color: black;
 
     &:hover {
@@ -32,14 +32,14 @@
     }
   }
 
-  /* Flexibilidade para tamanhos diferentes */
   &--small {
     padding: 5px 10px;
     font-size: 14px;
   }
 
   &--large {
-    padding: 15px 30px;
-    font-size: 18px;
+    width: 185px;
+    height: 51px;
+    font-weight: normal;
   }
 }

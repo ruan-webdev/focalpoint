@@ -1,9 +1,9 @@
 import React from "react"
-import styles from "./button.module.scss"
+import styles from "../../styles/Button.module.scss"
 
 interface ButtonProps {
   label: string
-  variant?: "primary" | "secondary"
+  variant?: "primary" | "secondary" | "danger"
   size?: "medium" | "large"
   onClick: (event: React.MouseEvent<HTMLButtonElement>) => void
 }

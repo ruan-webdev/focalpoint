@@ -1,41 +1,38 @@
-import { useState } from "react"
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import styles from "../../styles/AddTaskModal.module.scss"
+import Button from "../button"
 
-interface AddTaskModalProps {
-  onAddTask: (task: string) => void
+interface RemoveTaskModalProps {
+  task?: { title: string; completed: boolean }
+  onDelete: () => void
   onClose: () => void
 }
 
-const RemoveTaskModal = ({ onAddTask, onClose }: AddTaskModalProps) => {
-  const [task, setTask] = useState("")
-
-  const handleAdd = () => {
-    if (task) {
-      onAddTask(task)
-      setTask("")
-      onClose()
-    }
-  }
-
+const RemoveTaskModal = ({ task, onDelete, onClose }: RemoveTaskModalProps) => {
   return (
     <div className={styles.modal}>
       <div className={styles.content}>
-        <h2>Nova tarefa</h2>
-        <p>Titulo</p>
-        <input
-          type="text"
-          placeholder="Digite"
-          value={task}
-          onChange={(e) => setTask(e.target.value)}
-          className={styles.input}
-        />
+        <h2 style={{ marginBottom: "30px" }}>Deletar tarefa</h2>
+        <p style={{ marginBottom: "30px" }}>
+          Tem certeza que deseja deletar esta tarefa?
+        </p>
+
         <div className={styles.actions}>
-          <button onClick={onClose} className={styles.cancelBtn}>
-            Cancelar
-          </button>
-          <button onClick={handleAdd} className={styles.addBtn}>
-            Adicionar
-          </button>
+          <Button
+            label="Cancelar"
+            size="large"
+            variant="secondary"
+            onClick={onClose}
+          />
+          <Button
+            label="Deletar"
+            size="large"
+            variant="danger"
+            onClick={() => {
+              onDelete() // Chama a função de deletar
+              onClose() // Fecha o modal
+            }}
+          />
         </div>
       </div>
     </div>
