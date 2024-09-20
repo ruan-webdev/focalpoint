@@ -1,0 +1,36 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #ffffff;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.taskList {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  justify-content: center;
+  width: 450px;
+  margin: 40px auto 30px auto;
+  border-radius: 16px;
+  border: 1px solid #eaecf0;
+}
+
+.tasks {
+  margin-bottom: 20px;
+}
+
+.addTaskBtn {
+  background-image: linear-gradient(to right, #0796d3, #53c0f0);
+  color: white;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  border: none;
+  width: 450px;
+  height: 50px;
+  margin: 0 auto;
+  font-weight: normal;
+}

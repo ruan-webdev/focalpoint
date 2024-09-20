@@ -1,0 +1,49 @@
+.taskItem {
+  display: flex;
+  align-items: center; /* Alinha o checkbox e o nome da tarefa verticalmente */
+  justify-content: space-between; /* Mantém o botão de deletar no canto direito */
+  padding: 10px;
+  transition: background-color 0.3s;
+  margin-bottom: 20px;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-style: dashed;
+  border-width: 1px;
+  border-color: #b0bbd1;
+
+  &.completed {
+    text-decoration: line-through;
+    text-decoration-color: #818181;
+  }
+
+  &:hover {
+    background-color: #f7f9fd;
+    cursor: pointer;
+  }
+
+  input[type="checkbox"] {
+    margin-right: 10px; /* Espaço entre o checkbox e o nome da tarefa */
+    cursor: pointer;
+    accent-color: #0796d3;
+  }
+
+  span {
+    flex-grow: 1; /* Faz o título ocupar o espaço disponível entre o checkbox e a lixeira */
+    font-size: 16px;
+    font-weight: normal;
+    text-transform: capitalize;
+  }
+
+  .deleteBtn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    color: #f44336;
+    transition: color 0.3s;
+
+    &:hover {
+      color: #d32f2f;
+    }
+  }
+}
