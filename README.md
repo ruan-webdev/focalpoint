@@ -1,36 +1,46 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 📝 Focalpoint
 
-## Getting Started
+Focalpoint é um site voltado para gerenciamento de tarefas do dia a dia, desenvolvido como parte de um teste técnico para a empresa Focalpoint.
 
-First, run the development server:
+# 📷 Prints
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+<div style="display: flex; justify-content: space-between;">
+  <img src="image.png" alt="Print 1" style="width: 30%;">
+  <img src="image-1.png" alt="Print 2" style="width: 30%;">
+  <img src="image-2.png" alt="Print 3" style="width: 30%;">
+</div>
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 👨‍💻 Tecnologias Utilizadas
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Next JS**: Framework Javascript para o desenvolvimento da aplicação
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Sass**: Usado para pré-processamento do css
 
-## Learn More
+- **TypeScript**: Superset do JavaScript que adiciona tipagem estática ao código.
 
-To learn more about Next.js, take a look at the following resources:
+- **Local Storage**: Armazenamento local de dados assíncrono em Next.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🛠️ Como Clonar e Executar o Projeto
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. **Clone o repositório:**
 
-## Deploy on Vercel
+   ```bash
+   git clone https://github.com/ruan-webdev/focalpoint.git
+   cd mountfood-teste-tecnico
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+2. **Instale as dependências:**
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+   ```bash
+   npm install
+   ```
+
+3. **Rode a aplicação:**
+
+   ```bash
+   npm run dev
+   ```
+
+## 📌 Observações
+
+Certifique-se de ter as ferramentas necessárias configuradas para a intalação e execução do projeto (Node.JS)

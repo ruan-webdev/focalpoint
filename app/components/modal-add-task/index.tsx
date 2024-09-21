@@ -18,24 +18,26 @@ const AddTaskModal = ({ onAddTask, onClose }: AddTaskModalProps) => {
   }
 
   return (
-    <div className={styles.modal}>
-      <div className={styles.content}>
-        <h2>Nova tarefa</h2>
-        <p>Titulo</p>
-        <input
-          type="text"
-          placeholder="Digite"
-          value={task}
-          onChange={(e) => setTask(e.target.value)}
-          className={styles.input}
-        />
-        <div className={styles.actions}>
-          <button onClick={onClose} className={styles.cancelBtn}>
-            Cancelar
-          </button>
-          <button onClick={handleAdd} className={styles.addBtn}>
-            Adicionar
-          </button>
+    <div className={styles.overlay}>
+      <div className={styles.modal}>
+        <div className={styles.content}>
+          <h2>Nova tarefa</h2>
+          <p>Título</p>
+          <input
+            type="text"
+            placeholder="Digite"
+            value={task}
+            onChange={(e) => setTask(e.target.value)}
+            className={styles.input}
+          />
+          <div className={styles.actions}>
+            <button onClick={onClose} className={styles.cancelBtn}>
+              Cancelar
+            </button>
+            <button onClick={handleAdd} className={styles.addBtn}>
+              Adicionar
+            </button>
+          </div>
         </div>
       </div>
     </div>

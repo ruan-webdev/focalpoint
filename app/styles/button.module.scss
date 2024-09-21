@@ -42,4 +42,20 @@
     height: 51px;
     font-weight: normal;
   }
+
+  @media (max-width: 480px) {
+    &--large {
+      width: 100%;
+    }
+
+    &--danger {
+      width: 100%;
+      order: 1;
+    }
+
+    &--secondary {
+      width: 100%;
+      order: 2;
+    }
+  }
 }

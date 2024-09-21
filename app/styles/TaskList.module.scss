@@ -10,7 +10,7 @@
 .taskList {
   display: flex;
   flex-direction: column;
-  padding: 20px;
+  padding: 30px;
   justify-content: center;
   width: 450px;
   margin: 40px auto 30px auto;
@@ -33,4 +33,18 @@
   height: 50px;
   margin: 0 auto;
   font-weight: normal;
+}
+
+@media (max-width: 480px) {
+  .taskList {
+    width: 350px;
+  }
+  .addTaskBtn {
+    width: 350px;
+  }
+
+  .tasks {
+    width: 250px;
+    margin: 0 auto;
+  }
 }
