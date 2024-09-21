@@ -26,7 +26,7 @@ Focalpoint é um site voltado para gerenciamento de tarefas do dia a dia, desenv
 
    ```bash
    git clone https://github.com/ruan-webdev/focalpoint.git
-   cd mountfood-teste-tecnico
+   cd focalpoint
    ```
 
 2. **Instale as dependências:**
