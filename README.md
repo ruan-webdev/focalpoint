@@ -1,6 +1,6 @@
 # 📝 Focalpoint
 
-Focalpoint é um site voltado para gerenciamento de tarefas do dia a dia, desenvolvido como parte de um teste técnico para a empresa Focalpoint.
+Focalpoint é um site voltado para gerenciamento de tarefas do dia a dia, desenvolvido como parte de um teste técnico para a empresa Legaplan.
 
 # 📷 Prints
 
