@@ -1,4 +1,4 @@
-import styles from "../../styles/AddTaskModal.module.scss"
+import styles from "../../styles/addTaskModal.module.scss"
 import Button from "../button"
 
 interface RemoveTaskModalProps {

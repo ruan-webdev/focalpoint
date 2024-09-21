@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 
 export const metadata: Metadata = {
   title: "FocalPoint",
+  description: "Gerenciador de tarefas",
 }
 
 export default function RootLayout({
@@ -11,7 +12,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-br">
-      <link rel="icon" href="/favicon.svg" sizes="any" />
+      <header>
+        <link rel="icon" href="/favicon.svg" sizes="any" />
+      </header>
       <body>{children}</body>
     </html>
   )

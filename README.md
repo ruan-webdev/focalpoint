@@ -4,10 +4,10 @@ Focalpoint é um site voltado para gerenciamento de tarefas do dia a dia, desenv
 
 # 📷 Prints
 
-<div style="display: flex; justify-content: space-between;">
-  <img src="image.png" alt="Print 1" style="width: 30%;">
-  <img src="image-1.png" alt="Print 2" style="width: 30%;">
-  <img src="image-2.png" alt="Print 3" style="width: 30%;">
+<div style="display: flex; flex-direction: column; gap: 20px;">
+  <img src="image.png" alt="Print 1">
+  <img src="image-1.png" alt="Print 2">
+  <img src="image-2.png" alt="Print 3">
 </div>
 
 ## 👨‍💻 Tecnologias Utilizadas
@@ -26,7 +26,7 @@ Focalpoint é um site voltado para gerenciamento de tarefas do dia a dia, desenv
 
    ```bash
    git clone https://github.com/ruan-webdev/focalpoint.git
-   cd focalpoint
+   cd mountfood-teste-tecnico
    ```
 
 2. **Instale as dependências:**

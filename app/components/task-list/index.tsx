@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react"
 import TaskItem from "../task-item"
 import AddTaskModal from "../modal-add-task"
-import styles from "../../styles/TaskList.module.scss"
+import styles from "../../styles/taskList.module.scss"
 import RemoveTaskModal from "../modal-delete-task"
 
 const TaskList = () => {

@@ -1,5 +1,5 @@
 import { useState } from "react"
-import styles from "../../styles/AddTaskModal.module.scss"
+import styles from "../../styles/addTaskModal.module.scss"
 
 interface AddTaskModalProps {
   onAddTask: (task: string) => void
