@@ -11,6 +11,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-br">
+      <link rel="icon" href="/favicon.svg" sizes="any" />
       <body>{children}</body>
     </html>
   )
