@@ -16,7 +16,7 @@ const Header = () => {
           height={37}
         />
       </div>
-      <div className={styles.welcome}>Bem vindo de volta, Marcus</div>
+      <div className={styles.welcome}>Bem vindo de volta, Usuário</div>
       <div className={styles.date}>{dataFormatada}</div>
     </header>
   )
