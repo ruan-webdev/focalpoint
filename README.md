@@ -2,6 +2,8 @@
 
 Focalpoint é um site voltado para gerenciamento de tarefas do dia a dia, desenvolvido como parte de um teste técnico.
 
+Link para visualização web: https://focalpoint-test-blush.vercel.app/
+
 # 📷 Prints
 
 <div style="display: flex; flex-direction: column; gap: 20px;">
