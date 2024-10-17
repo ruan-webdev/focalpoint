@@ -6,17 +6,18 @@ import AddTaskModal from "../modal-add-task"
 import styles from "../../styles/taskList.module.scss"
 import RemoveTaskModal from "../modal-delete-task"
 
+interface Task {
+  id: number
+  title: string
+  completed: boolean
+}
+
 const TaskList = () => {
-  const [tasks, setTasks] = useState<{ title: string; completed: boolean }[]>(
-    []
-  )
+  const [tasks, setTasks] = useState<Task[]>([])
 
   const [showModal, setShowModal] = useState(false)
   const [showDeleteModal, setShowDeleteModal] = useState(false)
-  const [taskToDelete, setTaskToDelete] = useState<{
-    title: string
-    completed: boolean
-  } | null>(null)
+  const [taskToDelete, setTaskToDelete] = useState<Task | null>(null)
 
   useEffect(() => {
     const savedTasks = localStorage.getItem("tasks")
@@ -32,19 +33,27 @@ const TaskList = () => {
   }, [tasks])
 
   const addTask = (title: string) => {
-    setTasks([...tasks, { title, completed: false }])
+    setTasks([...tasks, { id: Date.now(), title, completed: false }]) // Usando Date.now() para gerar um ID único
   }
 
-  const toggleTask = (index: number) => {
-    const newTasks = tasks.map((task, i) =>
-      i === index ? { ...task, completed: !task.completed } : task
+  const toggleTask = (id: number) => {
+    const updatedTasks = tasks.map((task) =>
+      task.id === id ? { ...task, completed: !task.completed } : task
     )
-    setTasks(newTasks)
+    setTasks(updatedTasks)
   }
 
-  const deleteTask = (index: number) => {
-    setTaskToDelete(tasks[index]) // Define a tarefa a ser deletada
+  const deleteTask = (id: number) => {
+    setTaskToDelete(tasks.find((task) => task.id === id) || null) // Definindo a tarefa a ser deletada
     setShowDeleteModal(true) // Abre o modal
+  }
+
+  const handleDeleteTask = (id: number) => {
+    const updatedTasks = tasks.filter((task) => task.id !== id) // Filtra pela id
+    setTasks(updatedTasks) // Atualiza o estado com as tarefas restantes
+    localStorage.setItem("tasks", JSON.stringify(updatedTasks)) // Atualiza o localStorage
+    setShowDeleteModal(false)
+    setTaskToDelete(null)
   }
 
   return (
@@ -54,12 +63,12 @@ const TaskList = () => {
         <div className={styles.tasks}>
           {tasks
             .filter((task) => !task.completed) // Apenas tarefas não completadas
-            .map((task, index) => (
+            .map((task) => (
               <TaskItem
-                key={index}
+                key={task.id} // Usando o ID como chave
                 task={task}
-                onToggle={() => toggleTask(index)}
-                onDelete={() => deleteTask(index)}
+                onToggle={() => toggleTask(task.id)}
+                onDelete={() => deleteTask(task.id)}
               />
             ))}
         </div>
@@ -70,12 +79,12 @@ const TaskList = () => {
             <div className={styles.tasks}>
               {tasks
                 .filter((task) => task.completed)
-                .map((task, index) => (
+                .map((task) => (
                   <TaskItem
-                    key={index}
+                    key={task.id}
                     task={task}
-                    onToggle={() => toggleTask(index)}
-                    onDelete={() => deleteTask(index)}
+                    onToggle={() => toggleTask(task.id)}
+                    onDelete={() => deleteTask(task.id)}
                   />
                 ))}
             </div>
@@ -87,22 +96,16 @@ const TaskList = () => {
         <AddTaskModal onAddTask={addTask} onClose={() => setShowModal(false)} />
       )}
 
-      {showDeleteModal &&
-        taskToDelete && ( // Verifique se taskToDelete não é null
-          <RemoveTaskModal
-            task={taskToDelete}
-            onDelete={() => {
-              const updatedTasks = tasks.filter(
-                (_, i) => i !== tasks.indexOf(taskToDelete)
-              )
-              setTasks(updatedTasks)
-            }}
-            onClose={() => {
-              setShowDeleteModal(false)
-              setTaskToDelete(null)
-            }}
-          />
-        )}
+      {showDeleteModal && taskToDelete && (
+        <RemoveTaskModal
+          task={taskToDelete}
+          onDelete={() => handleDeleteTask(taskToDelete.id)}
+          onClose={() => {
+            setShowDeleteModal(false)
+            setTaskToDelete(null)
+          }}
+        />
+      )}
 
       <button className={styles.addTaskBtn} onClick={() => setShowModal(true)}>
         Adicionar nova tarefa
